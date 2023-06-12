@@ -33,23 +33,26 @@ const links = [
   },
 ];
 
-const Navbar = (): any => {
-  <div className={styles.container}>
-    <Link href="/" className={styles.logo}>
-      Simple Website
-    </Link>
-    <div className={styles.links}>
-      {links.map((link) => (
-        <Link key={link.id} href={link.url} className={styles.link}>
-          {link.title}
-        </Link>
-      ))}
-      {/* {session.status === "authenticated" && (
-        <button className={styles.logout} onClick={signOut}>
-          Logout
-        </button>
-      )} */}
+const Navbar = () => {
+  return (
+    <div className={styles.container}>
+      <Link href="/" className={styles.logo}>
+        Simple Website
+      </Link>
+      <div className={styles.links}>
+        {links.map((link) => (
+          <Link key={link.id} href={link.url} className={styles.link}>
+            {link.title}
+          </Link>
+        ))}
+        <button className={styles.logout}>Logout</button>
+        {/* {session.status === "authenticated" && (
+      <button className={styles.logout} onClick={signOut}>
+        Logout
+      </button>
+    )} */}
+      </div>
     </div>
-  </div>;
+  );
 };
 export default Navbar;
